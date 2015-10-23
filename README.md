@@ -30,6 +30,7 @@ information.
 **Doctrine ORM**
 
 - [`EntityWriter`](#entitywriter-for-doctrine-rom)
+- [`RepositoryReader`](#repositoryreader-for-doctrine-orm)
 
 ### `EntityWriter` for Doctrine ORM
 
@@ -63,6 +64,21 @@ $writer->finish(); // flush
 
 Setting the `flushInverval` option to `null`, which is also the default value, flushes the transaction only when
 calling `finish()`. If no items are written using `writeItem()` the writer will never call `flush()`.
+
+
+### `RepositoryReader` for Doctrine ORM
+
+`Plum\PlumDoctrine\ORM\RepositoryReader` takes a `Doctrine\ORM\EntityRepository` and a 
+[simple condition](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/working-with-objects.html#by-simple-conditions)
+and returns an iterator with the results.
+
+```php
+use Plum\PlumDoctrine\ORM\RepositoryReader;
+
+$reader = new RepositoryReader($repository, ['age' => 20]);
+$reader->getIterator(); // -> ArrayIterator
+$reader->count(); // -> int
+```
 
 
 Change Log
