@@ -30,7 +30,9 @@ information.
 **Doctrine ORM**
 
 - [`EntityWriter`](#entitywriter-for-doctrine-rom)
+- [`QueryReader`](#queryreader-for-doctrine-orm)
 - [`RepositoryReader`](#repositoryreader-for-doctrine-orm)
+
 
 ### `EntityWriter` for Doctrine ORM
 
@@ -64,6 +66,29 @@ $writer->finish(); // flush
 
 Setting the `flushInverval` option to `null`, which is also the default value, flushes the transaction only when
 calling `finish()`. If no items are written using `writeItem()` the writer will never call `flush()`.
+
+
+### `QueryReader` for Doctrine ORM
+
+`Plum\PlumDoctrine\ORM\QueryReader` takes an instance of `Doctrine\ORM\AbstractQuery` and returns an iterator for the
+result.
+
+```php
+use Plum\PlumDoctrine\ORM\QueryReader;
+
+$reader = new QueryReader($query);
+$reader->getIterator(); // -> ArrayIterator<object>
+$reader->count(); // -> int
+```
+
+The hydration mode can be set using the `hydrationMode` option.
+
+```php
+use Plum\PlumDoctrine\ORM\QueryReader;
+
+$reader = new QueryReader($query, ['hydrationMode' => Doctrine\ORM\Query::HYDRATE_ARRAY);
+$reader->getIterator(); // -> ArrayIterator<array>
+```
 
 
 ### `RepositoryReader` for Doctrine ORM
