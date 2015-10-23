@@ -20,11 +20,49 @@ You can install PlumDoctrine using [Composer](http://getcomposer.org).
 $ composer require plumphp/plum-doctrine
 ```
 
+
 Usage
 -----
 
 Please refer to the [Plum documentation](https://github.com/plumphp/plum/blob/master/docs/index.md) for more
 information.
+
+**Doctrine ORM**
+
+- [`EntityWriter`](#entitywriter-for-doctrine-rom)
+
+### `EntityWriter` for Doctrine ORM
+
+`Plum\PlumDoctrine\ORM\EntityWriter` persists entities using an instance of `Doctrine\ORM\EntityManagerInterface`. It
+supports batch operations with a configurable flush interval.
+
+```php
+use Plum\PlumDoctrine\ORM\EntityWriter;
+
+$writer = new EntityWriter($entityManager);
+$writer->prepare();
+$writer->writeItem($user1); // persist, but no flush
+$writer->writeItem($user2); // persist, but no flush
+$writer->finish(); // flush
+```
+
+If you are persisting too many entities for one flush at the end you can set the `flushInterval` option to flush after
+writing every `x` entities.
+
+```php
+use Plum\PlumDoctrine\ORM\EntityWriter;
+
+$writer = new EntityWriter($entityManager, ['flushInterval' => 3);
+$writer->prepare();
+$writer->writeItem($user1); // persist, but no flush
+$writer->writeItem($user2); // persist, but no flush
+$writer->writeItem($user3); // persist and flush
+$writer->writeItem($user4); // persist, but no flush
+$writer->finish(); // flush
+```
+
+Setting the `flushInverval` option to `null`, which is also the default value, flushes the transaction only when
+calling `finish()`. If no items are written using `writeItem()` the writer will never call `flush()`.
 
 
 Change Log
