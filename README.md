@@ -109,7 +109,9 @@ $reader->count(); // -> int
 Change Log
 ----------
 
-*No version released yet.*
+### Version 0.1 (24 October 2015)
+
+- Initial release
 
 
 License
