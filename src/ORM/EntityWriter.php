@@ -6,9 +6,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Plum\Plum\Writer\WriterInterface;
 
 /**
- * EntityWriter
+ * EntityWriter.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
@@ -47,13 +46,11 @@ class EntityWriter implements WriterInterface
      * Write the given item.
      *
      * @param mixed $item
-     *
-     * @return void
      */
     public function writeItem($item)
     {
         $this->entityManager->persist($item);
-        $this->persistCount++;
+        ++$this->persistCount;
         if ($this->options['flushInterval'] && $this->shouldFlush()) {
             $this->finish();
         }
@@ -61,8 +58,6 @@ class EntityWriter implements WriterInterface
 
     /**
      * Prepare the writer.
-     *
-     * @return void
      */
     public function prepare()
     {
@@ -71,8 +66,6 @@ class EntityWriter implements WriterInterface
 
     /**
      * Finish the writer.
-     *
-     * @return void
      */
     public function finish()
     {

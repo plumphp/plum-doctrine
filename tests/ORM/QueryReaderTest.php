@@ -8,9 +8,8 @@ use PHPUnit_Framework_TestCase;
 use stdClass;
 
 /**
- * QueryReaderTest
+ * QueryReaderTest.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit

@@ -5,12 +5,10 @@ namespace Plum\PlumDoctrine\ORM;
 use ArrayIterator;
 use Doctrine\ORM\AbstractQuery;
 use Plum\Plum\Reader\ReaderInterface;
-use Traversable;
 
 /**
- * QueryReader
+ * QueryReader.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */

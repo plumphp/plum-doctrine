@@ -8,9 +8,8 @@ use ReflectionClass;
 use stdClass;
 
 /**
- * EntityWriterTest
+ * EntityWriterTest.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit

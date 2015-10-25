@@ -7,9 +7,8 @@ use Doctrine\ORM\EntityRepository;
 use Plum\Plum\Reader\ReaderInterface;
 
 /**
- * RepositoryReader
+ * RepositoryReader.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
