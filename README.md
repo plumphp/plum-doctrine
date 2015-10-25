@@ -7,6 +7,7 @@
 [![Build Status](https://travis-ci.org/plumphp/plum-doctrine.svg)](https://travis-ci.org/plumphp/plum-doctrine)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/plumphp/plum-doctrine/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/plumphp/plum-doctrine/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/plumphp/plum-doctrine/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/plumphp/plum-doctrine/?branch=master)
+[![StyleCI](https://styleci.io/repos/44803598/shield)](https://styleci.io/repos/44803598)
 
 Developed by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
