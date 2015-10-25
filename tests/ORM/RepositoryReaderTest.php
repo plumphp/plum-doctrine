@@ -2,15 +2,13 @@
 
 namespace Plum\PlumDoctrine\ORM;
 
-use ArrayIterator;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 use stdClass;
 
 /**
- * RepositoryReaderTest
+ * RepositoryReaderTest.
  *
- * @package   Plum\PlumDoctrine\ORM
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
